@@ -10,7 +10,7 @@
 <body>
     <section class="sec">
         <header>
-            <a href="#"><img src="images/logoKarol-White.png" alt="logo"></img></a>
+            <a href="#"><img src="images/logoKarol-White.png" alt="logo" class="logo"></img></a>
             <div class="toggleMenu" onclick="menuToglle()"></div>
             <ul class="navigation">
                 <li><a href="#">Home</a></li>
@@ -28,13 +28,13 @@
                 <a href="#">Veja todos os produtos</a>
             </div>
             <div class="imgBox">
-                <img src="images/hidratante001.png" alt="Hidratante"></img>
+                <img src="images/hidratante001.png" alt="Hidratante" class="hidratante"></img>
             </div>
         </div>
         <div class="thumb">
-            <li><img src="images/hidratante001.png" alt="baliThumb"></img></li>
-            <li><img src="images/hidratante002.png" alt="celebrationThumb"></img></li>
-            <li><img src="images/hidratante003.png" alt="coliseuThumb"></img></li>
+            <li><img src="images/hidratante001.png" alt="baliThumb" onclick="imgSlider('images/hidratante001.png'); changeColor('#AD8BC7')"></img></li>
+            <li><img src="images/hidratante002.png" alt="celebrationThumb" onclick="imgSlider('images/hidratante002.png'); changeColor('#65497A')"></img></li>
+            <li><img src="images/hidratante003.png" alt="coliseuThumb" onclick="imgSlider('images/hidratante003.png'); changeColor('#507A61')"></img></li>
         </div>
         <div class="sci">
             <li><a href="#"><img src="images/facebook.png" alt="facebook"></img></a></li>
@@ -49,6 +49,15 @@
             const navigation = document.querySelector('.navigation');
             toggleMenu.classList.toggle('active');
             navigation.classList.toggle('active');
+        }
+
+        function imgSlider(anything) {
+            document.querySelector('.hidratante').src = anything;
+        }
+
+        function changeColor(color) {
+            const sec = document.querySelector('.sec');
+            sec.style.background = color;
         }
     </script>
 </body>
